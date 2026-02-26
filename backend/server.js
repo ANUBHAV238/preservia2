@@ -41,6 +41,10 @@ app.use(cors({
   credentials: true,
 }))
 
+app.get("/", (req, res) => {
+  res.send("Preservia Backend is Running 🚀");
+});
+
 // Rate limiting
 const limiter = rateLimit({
   windowMs: parseInt(process.env.RATE_LIMIT_WINDOW_MS) || 900000,
